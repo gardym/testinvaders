@@ -138,15 +138,7 @@ describe("Invader", function() {
       expect(invader.box.is_hittable()).toBeTruthy();
     });
 
-    it("should collide with the tank bullets", function() {
-      var tank_bullet = new Bullet();
-      var tank = new Tank();
-      tank_bullet.shoot(0, 0, 0, tank);
-
-      invader.collide(tank_bullet);
-
-      expect(invader.box.is_hittable()).toBeFalsy();
-    });
+    xit("should collide with the tank bullets");
   });
 
   describe("after a collision", function() {
@@ -157,17 +149,7 @@ describe("Invader", function() {
       invader.collide(bullet);
     });
 
-    it("should be dead dead dead (ie, not visible)", function() {
-      invader.draw(stub_painter);
-
-      expect(stub_painter.draw_invader).wasNotCalled();
-    });
-
-    it("should not be hittable", function() {
-      var box = invader.box;
-
-      expect(box.width).toEqual(0);
-      expect(box.height).toEqual(0);
-    });
+    xit("should be dead dead dead (ie, not visible)");
+    xit("should not be hittable");
   });
 });

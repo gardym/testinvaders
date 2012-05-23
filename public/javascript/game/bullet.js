@@ -20,7 +20,7 @@ function Bullet() {
   };
 
   this.update = function(delta_time) {
-    this.position.y = this.position.y + (delta_time * velocity);
+    this.position.x = this.position.x + (delta_time * velocity);
   };
 
   this.draw = function(painter) {

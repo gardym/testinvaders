@@ -37,15 +37,12 @@ function Invader(initial_velocity, initial_x, initial_y, initial_countdown, bull
   };
 
   this.draw = function(painter) {
-    if (active) {
-      painter.draw_invader(this.position);
-    }
+    painter.draw_invader(this.position);
   };
 
   this.collide = function(other_thing) {
     if(other_thing.owner && Object.getPrototypeOf(other_thing.owner) === Tank.prototype) {
       active = false;
-      this.box.make_unhittable();
     }
   };
 
