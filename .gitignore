@@ -3,3 +3,4 @@
 .rbenv-version
 bin
 node_modules
+vendor/bundle
