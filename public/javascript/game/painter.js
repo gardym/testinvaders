@@ -22,5 +22,11 @@ function Painter(context) {
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
   };
 
+  this.text = function(text, x, y, font, color) {
+    context.font = font;
+    context.fillStyle = color;
+    context.fillText(text, x, y);
+  };
+
   return this;
 }

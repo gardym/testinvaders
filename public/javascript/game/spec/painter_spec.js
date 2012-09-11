@@ -10,7 +10,8 @@ describe("Painter", function() {
     stub_context = {
       canvas: stub_canvas,
       drawImage: jasmine.createSpy("stub_context.drawImage"),
-      fillRect: jasmine.createSpy("stub_context.clearRect")
+      fillRect: jasmine.createSpy("stub_context.clearRect"),
+      fillText: jasmine.createSpy("stub_context.fillText")
     };
     painter = new Painter(stub_context);
     painter.images = {
@@ -79,6 +80,26 @@ describe("Painter", function() {
 
       expect(stub_context.fillStyle).toEqual("black");
       expect(stub_context.fillRect).toHaveBeenCalledWith(0, 0, stub_canvas.width, stub_canvas.height);
+    });
+  });
+
+  describe("drawing text on the canvas", function() {
+    var the_test_font = "32px Arial, sans-serif";
+    var the_test_color = "#f00";
+    beforeEach(function() {
+      painter.text("Score", 50, 100, the_test_font, the_test_color);
+    });
+    it("is the given text", function() {
+      expect(stub_context.fillText).toHaveBeenCalledWith("Score", jasmine.any(Number), jasmine.any(Number));
+    });
+    it("is at the specified position", function() {
+      expect(stub_context.fillText).toHaveBeenCalledWith(jasmine.any(String), 50, 100);
+    });
+    it("is the specified size", function() {
+      expect(stub_context.font).toBe(the_test_font);
+    });
+    it("is the specified color", function() {
+      expect(stub_context.fillStyle).toBe(the_test_color);
     });
   });
 });
