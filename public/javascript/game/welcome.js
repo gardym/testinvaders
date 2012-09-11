@@ -23,10 +23,10 @@ function Init() {
     for(var col = 0; col < 10; col++) {
       var x = col * column_offset;
       var y = row * row_offset;
-      
+
       var invader_bullet = new InvaderBullet();
       var invader = new Invader(x, y, invader_bullet);
-      
+
       invaders.push(invader);
       things.push(invader_bullet);
       things.push(invader);
