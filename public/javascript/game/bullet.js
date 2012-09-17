@@ -16,7 +16,7 @@ function Bullet() {
   };
 
   this.update = function(delta_time) {
-    this.box.y = this.box.y + (delta_time * velocity);
+    this.box.x = this.box.x + (delta_time * velocity);
 
     if (this.box.y < 0) {
       this.active = false;
