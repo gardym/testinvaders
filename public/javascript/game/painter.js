@@ -8,7 +8,12 @@ function Painter(context) {
     tank: find_image("img_tank"),
     invader: find_image("img_invader"),
     tank_bullet: find_image("img_tank_bullet"),
-    invader_bullet: find_image("img_invader_bullet")
+    invader_bullet: find_image("img_invader_bullet"),
+
+    invader_red: find_image("img_invader_red"),
+    invader_blue: find_image("img_invader_blue"),
+    invader_yellow: find_image("img_invader_yellow"),
+    invader_orange: find_image("img_invader_orange")
   };
 
   this.draw = function(thing) {
